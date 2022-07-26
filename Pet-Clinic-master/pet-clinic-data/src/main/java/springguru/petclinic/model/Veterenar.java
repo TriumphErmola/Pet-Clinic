@@ -2,7 +2,7 @@ package springguru.petclinic.model;
 
 import java.time.LocalDate;
 
-public class PetEmployee extends Human{
+public class Veterenar extends Human{
 
     private TypeAnimal typeAnimal;
     private MasterOfAnimal masterOfAnimal;
