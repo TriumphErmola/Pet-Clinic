@@ -23,4 +23,6 @@ public class Human {
     public void setSecondName(String secondName) {
         this.secondName = secondName;
     }
+
+
 }
