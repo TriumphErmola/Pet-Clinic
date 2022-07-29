@@ -5,11 +5,7 @@ import springguru.petclinic.model.HomeAnimal;
 
 import java.util.Set;
 
-public interface HomeAnimalServiceImpl {
+public interface HomeAnimalServiceImpl extends CrudService<HomeAnimal, Long> {
 
-    HomeAnimal findByid(Long id);
 
-    HomeAnimal safe(HomeAnimal homeAnimal);
-
-    Set<HomeAnimal> findAll();
 }
