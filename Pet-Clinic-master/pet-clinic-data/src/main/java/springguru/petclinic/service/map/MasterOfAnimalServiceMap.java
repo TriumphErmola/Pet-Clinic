@@ -1,11 +1,11 @@
 package springguru.petclinic.service.map;
 
 import springguru.petclinic.model.MasterOfAnimal;
-import springguru.petclinic.service.CrudService;
+import springguru.petclinic.service.MasterOfAnimalServiceImpl;
 
 import java.util.Set;
 
-public class MasterOfAnimalServiceMap extends AbstractMapService<MasterOfAnimal, Long> implements CrudService<MasterOfAnimal, Long> {
+public class MasterOfAnimalServiceMap extends AbstractMapService<MasterOfAnimal, Long> implements MasterOfAnimalServiceImpl {
 
     @Override
     public Set<MasterOfAnimal> findAll() {
@@ -24,6 +24,8 @@ public class MasterOfAnimalServiceMap extends AbstractMapService<MasterOfAnimal,
     }
 
 
+
+
     @Override
     public void delete(MasterOfAnimal object) {
         super.delete(object);
@@ -35,4 +37,8 @@ public class MasterOfAnimalServiceMap extends AbstractMapService<MasterOfAnimal,
     }
 
 
+    @Override
+    public MasterOfAnimal findByLastName(String lastName) {
+        return null;
+    }
 }

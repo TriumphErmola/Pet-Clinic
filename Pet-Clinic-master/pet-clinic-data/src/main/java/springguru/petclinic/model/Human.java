@@ -4,6 +4,7 @@ public class Human {
 
     private String firstName;
     private String secondName;
+    private long id;
 
     public Human() {
     }
@@ -24,5 +25,11 @@ public class Human {
         this.secondName = secondName;
     }
 
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 }

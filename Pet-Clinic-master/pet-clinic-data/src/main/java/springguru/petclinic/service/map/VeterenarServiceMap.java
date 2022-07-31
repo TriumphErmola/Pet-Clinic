@@ -1,11 +1,11 @@
 package springguru.petclinic.service.map;
 
 import springguru.petclinic.model.Veterenar;
-import springguru.petclinic.service.CrudService;
+import springguru.petclinic.service.VeterenarServiceImpl;
 
 import java.util.Set;
 
-public class VeterenarServiceMap extends AbstractMapService<Veterenar,Long> implements CrudService<Veterenar,Long> {
+public class VeterenarServiceMap extends AbstractMapService<Veterenar,Long> implements VeterenarServiceImpl {
 
 
     @Override

@@ -31,4 +31,6 @@ public class Veterenar extends Human{
     public void setBirthDataAnimal(LocalDate birthDataAnimal) {
         this.birthDataAnimal = birthDataAnimal;
     }
+
+
 }
