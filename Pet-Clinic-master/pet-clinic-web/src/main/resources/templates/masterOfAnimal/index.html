@@ -5,7 +5,24 @@
     <title>List MasterOfAnimal</title>
 </head>
 <body>
+<!--/*@thymesVar id="masterOfAnimal" type="springguru.petclinic.model.MasterOfAnimal"*/-->
 <h1 th:text="'List Of MasterOfAnimals'"> List MasterOfAnimals</h1>
 
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th: th:each="masterOfAnimal : ${masterOfAnimals}">
+        <td th: th:text="${masterOfAnimal?.id}">1</td>
+        <td th: th:text="${masterOfAnimal?.firstName}">Joe</td>
+        <td th: th:text="${masterOfAnimal?.lastName}">Buck</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

@@ -1,14 +1,24 @@
 package springguru.petclinic.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-@RequestMapping("/masterOfAnimal")
+import springguru.petclinic.service.MasterOfAnimalServiceImpl;
+
+@RequestMapping("/masterOfAnimals")
 @Controller
 public class MasterOfAnimalController {
 
+    private final MasterOfAnimalServiceImpl masterOfAnimalService;
+
+    public MasterOfAnimalController(MasterOfAnimalServiceImpl masterOfAnimalService) {
+        this.masterOfAnimalService = masterOfAnimalService;
+    }
+
     @RequestMapping({"","/index","/","/index.html "})
-    public String masterOfAnimalList(){
-        return "masterOfAnimal/index";
+    public String masterOfAnimalList(Model model){
+        model.addAttribute("masterOfAnimals",masterOfAnimalService.findAll());
+        return "masterOfAnimals/index";
     }
 
 }

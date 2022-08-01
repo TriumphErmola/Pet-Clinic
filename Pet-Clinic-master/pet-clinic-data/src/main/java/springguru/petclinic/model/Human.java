@@ -1,6 +1,6 @@
 package springguru.petclinic.model;
 
-public class Human {
+public class Human extends BaseEntity{
 
     private String firstName;
     private String secondName;
@@ -25,11 +25,4 @@ public class Human {
         this.secondName = secondName;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 }
