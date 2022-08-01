@@ -10,7 +10,7 @@ public class VeterenarServiceMap extends AbstractMapService<Veterenar,Long> impl
 
     @Override
     public Set<Veterenar> findAll() {
-        return super.findByAll();
+        return super.findAll();
     }
 
     @Override
@@ -25,7 +25,7 @@ public class VeterenarServiceMap extends AbstractMapService<Veterenar,Long> impl
 
     @Override
     public Veterenar save(Veterenar object) {
-        return super.save(object.getId(),object);
+        return super.save(object);
     }
 
     @Override

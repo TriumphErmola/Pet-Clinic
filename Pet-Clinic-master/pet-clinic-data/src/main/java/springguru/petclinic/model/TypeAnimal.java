@@ -1,6 +1,6 @@
 package springguru.petclinic.model;
 
-public class TypeAnimal {
+public class TypeAnimal extends BaseEntity{
 
     private String TypeName;
 

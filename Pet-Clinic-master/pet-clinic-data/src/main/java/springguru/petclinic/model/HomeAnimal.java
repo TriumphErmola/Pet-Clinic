@@ -1,19 +1,10 @@
 package springguru.petclinic.model;
 
-public class HomeAnimal {
+public class HomeAnimal extends BaseEntity{
 
-    private long id;
     private String name;
 
     public HomeAnimal() {
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getName() {

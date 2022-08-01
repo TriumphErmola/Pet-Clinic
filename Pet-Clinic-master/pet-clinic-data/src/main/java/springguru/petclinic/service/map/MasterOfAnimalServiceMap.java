@@ -9,7 +9,7 @@ public class MasterOfAnimalServiceMap extends AbstractMapService<MasterOfAnimal,
 
     @Override
     public Set<MasterOfAnimal> findAll() {
-        return super.findByAll();
+        return super.findAll();
     }
 
     @Override
@@ -33,7 +33,7 @@ public class MasterOfAnimalServiceMap extends AbstractMapService<MasterOfAnimal,
 
     @Override
     public MasterOfAnimal save(MasterOfAnimal object) {
-        return super.save(object.getId(),object);
+        return super.save(object);
     }
 
 

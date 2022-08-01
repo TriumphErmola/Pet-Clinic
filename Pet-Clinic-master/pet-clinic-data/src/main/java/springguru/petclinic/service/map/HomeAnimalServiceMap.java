@@ -8,7 +8,7 @@ import java.util.Set;
 public class HomeAnimalServiceMap extends AbstractMapService<HomeAnimal,Long>implements HomeAnimalServiceImpl {
     @Override
     public Set<HomeAnimal> findAll() {
-        return super.findByAll();
+        return super.findAll();
     }
 
     @Override
@@ -24,7 +24,7 @@ public class HomeAnimalServiceMap extends AbstractMapService<HomeAnimal,Long>imp
 
     @Override
     public HomeAnimal save(HomeAnimal object) {
-        return super.save(object.getId(),object);
+        return super.save(object);
     }
 
     @Override

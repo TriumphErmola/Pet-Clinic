@@ -25,14 +25,12 @@ public class DataItializer implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         MasterOfAnimal masterOfAnimal1 = new MasterOfAnimal();
-        masterOfAnimal1.setId(1L);
         masterOfAnimal1.setFirstName("Andrey");
         masterOfAnimal1.setSecondName("Ermolenko");
 
         masterOfAnimalService.save(masterOfAnimal1);
 
         MasterOfAnimal masterOfAnimal2 = new MasterOfAnimal();
-        masterOfAnimal2.setId(2L);
         masterOfAnimal2.setFirstName("Pal");
         masterOfAnimal2.setSecondName("Palich");
 
@@ -43,14 +41,12 @@ public class DataItializer implements CommandLineRunner {
         Veterenar veterenar1 = new Veterenar();
         veterenar1.setFirstName("John");
         veterenar1.setSecondName("Wick");
-        veterenar1.setId(3L);
 
         veterenarService.save(veterenar1);
 
         Veterenar veterenar2 = new Veterenar();
         veterenar2.setFirstName("Bob");
         veterenar2.setSecondName("Dallos");
-        veterenar2.setId(4L);
 
         veterenarService.save(veterenar2);
 
