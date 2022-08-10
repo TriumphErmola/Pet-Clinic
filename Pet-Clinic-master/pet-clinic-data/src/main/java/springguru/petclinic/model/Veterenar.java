@@ -1,36 +1,17 @@
 package springguru.petclinic.model;
 
-import java.time.LocalDate;
+import java.util.Set;
 
 public class Veterenar extends Human{
 
-    private TypeAnimal typeAnimal;
-    private MasterOfAnimal masterOfAnimal;
-    private LocalDate birthDataAnimal;
+    private Set<Specialty> specialtySet;
 
-    public TypeAnimal getTypeAnimal() {
-        return typeAnimal;
+    public Set<Specialty> getSpecialtySet() {
+        return specialtySet;
     }
 
-    public void setTypeAnimal(TypeAnimal typeAnimal) {
-        this.typeAnimal = typeAnimal;
+    public void setSpecialtySet(Set<Specialty> specialtySet) {
+        this.specialtySet = specialtySet;
     }
-
-    public MasterOfAnimal getMasterOfAnimal() {
-        return masterOfAnimal;
-    }
-
-    public void setMasterOfAnimal(MasterOfAnimal masterOfAnimal) {
-        this.masterOfAnimal = masterOfAnimal;
-    }
-
-    public LocalDate getBirthDataAnimal() {
-        return birthDataAnimal;
-    }
-
-    public void setBirthDataAnimal(LocalDate birthDataAnimal) {
-        this.birthDataAnimal = birthDataAnimal;
-    }
-
 
 }
