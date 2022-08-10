@@ -1,11 +1,12 @@
 package springguru.petclinic.model;
 
+import java.time.LocalDate;
+
 public class HomeAnimal extends BaseEntity{
 
     private String name;
-
-    public HomeAnimal() {
-    }
+    private MasterOfAnimal masterOfAnimal;
+    private LocalDate birthday;
 
     public String getName() {
         return name;
@@ -13,5 +14,21 @@ public class HomeAnimal extends BaseEntity{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public MasterOfAnimal getMasterOfAnimal() {
+        return masterOfAnimal;
+    }
+
+    public void setMasterOfAnimal(MasterOfAnimal masterOfAnimal) {
+        this.masterOfAnimal = masterOfAnimal;
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
     }
 }
