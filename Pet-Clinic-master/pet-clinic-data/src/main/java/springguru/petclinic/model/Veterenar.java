@@ -1,10 +1,11 @@
 package springguru.petclinic.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Veterenar extends Human{
 
-    private Set<Specialty> specialtySet;
+    private Set<Specialty> specialtySet = new HashSet<>();
 
     public Set<Specialty> getSpecialtySet() {
         return specialtySet;

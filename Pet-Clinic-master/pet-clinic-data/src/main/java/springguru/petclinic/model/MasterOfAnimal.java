@@ -1,5 +1,6 @@
 package springguru.petclinic.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class MasterOfAnimal extends Human{
@@ -7,7 +8,7 @@ public class MasterOfAnimal extends Human{
     private String addres;
     private String city;
     private String telephone;
-    private Set<HomeAnimal> homeAnimalSet;
+    private Set<HomeAnimal> homeAnimalSet = new HashSet<>();
 
     public String getAddres() {
         return addres;
