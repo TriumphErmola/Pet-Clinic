@@ -1,10 +1,11 @@
 package springguru.petclinic.service.map;
 
+import org.springframework.stereotype.Service;
 import springguru.petclinic.model.MasterOfAnimal;
 import springguru.petclinic.service.MasterOfAnimalServiceImpl;
 
 import java.util.Set;
-
+@Service
 public class MasterOfAnimalServiceMap extends AbstractMapService<MasterOfAnimal, Long> implements MasterOfAnimalServiceImpl {
 
     @Override
@@ -22,9 +23,6 @@ public class MasterOfAnimalServiceMap extends AbstractMapService<MasterOfAnimal,
     public MasterOfAnimal findById(Long id) {
         return super.findById(id);
     }
-
-
-
 
     @Override
     public void delete(MasterOfAnimal object) {
