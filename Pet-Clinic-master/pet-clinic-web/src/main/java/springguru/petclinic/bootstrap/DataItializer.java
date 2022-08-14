@@ -2,11 +2,9 @@ package springguru.petclinic.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import springguru.petclinic.model.HomeAnimal;
-import springguru.petclinic.model.MasterOfAnimal;
-import springguru.petclinic.model.TypeAnimal;
-import springguru.petclinic.model.Veterenar;
+import springguru.petclinic.model.*;
 import springguru.petclinic.service.MasterOfAnimalServiceImpl;
+import springguru.petclinic.service.SpecialtyService;
 import springguru.petclinic.service.TypeAnimalService;
 import springguru.petclinic.service.VeterenarServiceImpl;
 
@@ -18,17 +16,28 @@ public class DataItializer implements CommandLineRunner {
     private final MasterOfAnimalServiceImpl masterOfAnimalService;
     private final VeterenarServiceImpl veterenarService;
     private final TypeAnimalService typeAnimalService;
+    private final SpecialtyService specialtyService;
 
 
-    public DataItializer(MasterOfAnimalServiceImpl masterOfAnimalService, VeterenarServiceImpl veterenarService, TypeAnimalService typeAnimalService) {
+    public DataItializer(MasterOfAnimalServiceImpl masterOfAnimalService, VeterenarServiceImpl veterenarService, TypeAnimalService typeAnimalService,
+    SpecialtyService specialtyService) {
         this.masterOfAnimalService = masterOfAnimalService;
         this.veterenarService = veterenarService;
         this.typeAnimalService = typeAnimalService;
+        this.specialtyService = specialtyService;
     }
 
     @Override
     public void run(String... args) throws Exception {
 
+        int count = typeAnimalService.findAll().size();
+
+        if(count == 0){
+            loadData();
+        }
+    }
+
+    private void loadData() {
         TypeAnimal dog = new TypeAnimal();
         dog.setTypeName("Dog");
         typeAnimalService.save(dog);
@@ -39,6 +48,20 @@ public class DataItializer implements CommandLineRunner {
         typeAnimalService.save(cat);
         System.out.println("Loaded TypeAnimal Cat");
 
+        Specialty radiology = new Specialty();
+        radiology.setDescription("Radiology");
+
+        Specialty surgery = new Specialty();
+        surgery.setDescription("Surgery");
+
+        Specialty dentistry = new Specialty();
+        dentistry.setDescription("Dentistry");
+
+        specialtyService.save(radiology);
+        specialtyService.save(surgery);
+        specialtyService.save(dentistry);
+
+        System.out.println("Loaded Specialtys");
 
         MasterOfAnimal masterOfAnimal1 = new MasterOfAnimal();
         masterOfAnimal1.setFirstName("Andrey");
@@ -78,17 +101,17 @@ public class DataItializer implements CommandLineRunner {
         Veterenar veterenar1 = new Veterenar();
         veterenar1.setFirstName("John");
         veterenar1.setSecondName("Wick");
+        veterenar1.getSpecialtySet().add(radiology);
 
         veterenarService.save(veterenar1);
 
         Veterenar veterenar2 = new Veterenar();
         veterenar2.setFirstName("Bob");
         veterenar2.setSecondName("Dallos");
+        veterenar2.getSpecialtySet().add(radiology);
 
         veterenarService.save(veterenar2);
 
         System.out.println("Loaded Veterenars");
-
-
     }
 }
