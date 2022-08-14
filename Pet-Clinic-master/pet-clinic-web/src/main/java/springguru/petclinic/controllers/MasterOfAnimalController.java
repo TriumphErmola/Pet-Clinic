@@ -9,7 +9,6 @@ import springguru.petclinic.service.MasterOfAnimalServiceImpl;
 @Controller
 public class MasterOfAnimalController {
 
-
     private final MasterOfAnimalServiceImpl masterOfAnimalService;
 
     public MasterOfAnimalController(MasterOfAnimalServiceImpl masterOfAnimalService) {
@@ -20,6 +19,11 @@ public class MasterOfAnimalController {
     public String masterOfAnimalList(Model model){
         model.addAttribute("masterOfAnimals",masterOfAnimalService.findAll());
         return "masterOfAnimals/index";
+    }
+
+    @RequestMapping("/find")
+    public String findMasterOfAnimal(){
+        return "notimplemented";
     }
 
 }
