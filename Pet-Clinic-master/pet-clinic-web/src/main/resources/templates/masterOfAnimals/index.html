@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org " th:replace="~{fragments/layout :: layout (~{::body},'masterOfAnimal')}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org " th:replace="~{fragments/layout :: layout (~{::body},'MasterOfAnimal')}">
 <head>
     <meta charset="UTF-8">
     <title>List MasterOfAnimal</title>
 </head>
 <body>
-<!--/*@thymesVar id="masterOfAnimal" type="springguru.petclinic.model.MasterOfAnimal"*/-->
+<!--/*@thymesVar id="MasterOfAnimal" type="springguru.petclinic.model.MasterOfAnimal"*/-->
 <h2 th:text="'List Of MasterOfAnimals'"> List Master Of Animals</h2>
 
 <table class="table table-striped">
@@ -17,7 +17,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr th: th:each="masterOfAnimal : ${masterOfAnimals}">
+    <tr th: th:each="masterOfAnimal : ${masterOfAnimal}">
         <td th: th:text="${masterOfAnimal?.id}">1</td>
         <td th: th:text="${masterOfAnimal?.firstName}">Joe</td>
         <td th: th:text="${masterOfAnimal?.lastName}">Buck</td>

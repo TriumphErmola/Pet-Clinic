@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import springguru.petclinic.service.MasterOfAnimalServiceImpl;
 
-@RequestMapping("/masterOfAnimals")
 @Controller
 public class MasterOfAnimalController {
 
@@ -15,7 +14,7 @@ public class MasterOfAnimalController {
         this.masterOfAnimalService = masterOfAnimalService;
     }
 
-    @RequestMapping({"","/index","/","/index.html "})
+    @RequestMapping({"/masterOfAnimals"})
     public String masterOfAnimalList(Model model){
         model.addAttribute("masterOfAnimals",masterOfAnimalService.findAll());
         return "masterOfAnimals/index";
