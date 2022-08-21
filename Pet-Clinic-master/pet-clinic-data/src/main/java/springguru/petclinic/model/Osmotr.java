@@ -2,6 +2,7 @@ package springguru.petclinic.model;
 
 import java.time.LocalDate;
 
+
 public class Osmotr extends BaseEntity {
 
     private LocalDate date;
