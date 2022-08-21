@@ -1,12 +1,19 @@
 package springguru.petclinic.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
-
+@Entity
+@Table(name = "osmotrs")
 public class Osmotr extends BaseEntity {
 
+    @Column(name = "date")
     private LocalDate date;
+    @Column(name = "description")
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "home_animal_id")
     private HomeAnimal homeAnimal;
 
     public LocalDate getDate() {
