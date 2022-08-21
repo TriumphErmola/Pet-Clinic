@@ -1,10 +1,15 @@
 package springguru.petclinic.model;
 
-public class Human extends BaseEntity{
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 
+@MappedSuperclass
+public class Human extends BaseEntity {
+
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "second_name")
     private String secondName;
-    private long id;
 
     public Human() {
     }
