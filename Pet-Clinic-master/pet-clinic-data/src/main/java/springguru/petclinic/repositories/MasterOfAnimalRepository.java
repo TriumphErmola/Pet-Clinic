@@ -5,5 +5,5 @@ import springguru.petclinic.model.MasterOfAnimal;
 
 public interface MasterOfAnimalRepository extends CrudRepository<MasterOfAnimal, Long> {
 
-
+    MasterOfAnimal findByLastName(String lastName);
 }
