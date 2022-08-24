@@ -3,14 +3,14 @@ package springguru.petclinic.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import springguru.petclinic.service.VeterenarServiceImpl;
+import springguru.petclinic.service.VeterenarService;
 
 @Controller
 public class VeterenarController {
 
-    private final VeterenarServiceImpl veterenarService;
+    private final VeterenarService veterenarService;
 
-    public VeterenarController(VeterenarServiceImpl veterenarService) {
+    public VeterenarController(VeterenarService veterenarService) {
         this.veterenarService = veterenarService;
     }
 

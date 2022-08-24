@@ -3,24 +3,24 @@ package springguru.petclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import springguru.petclinic.model.*;
-import springguru.petclinic.service.MasterOfAnimalServiceImpl;
+import springguru.petclinic.service.MasterOfAnimalService;
 import springguru.petclinic.service.SpecialtyService;
 import springguru.petclinic.service.TypeAnimalService;
-import springguru.petclinic.service.VeterenarServiceImpl;
+import springguru.petclinic.service.VeterenarService;
 
 import java.time.LocalDate;
 
 @Component
 public class DataItializer implements CommandLineRunner {
 
-    private final MasterOfAnimalServiceImpl masterOfAnimalService;
-    private final VeterenarServiceImpl veterenarService;
+    private final MasterOfAnimalService masterOfAnimalService;
+    private final VeterenarService veterenarService;
     private final TypeAnimalService typeAnimalService;
     private final SpecialtyService specialtyService;
 
 
-    public DataItializer(MasterOfAnimalServiceImpl masterOfAnimalService, VeterenarServiceImpl veterenarService, TypeAnimalService typeAnimalService,
-    SpecialtyService specialtyService) {
+    public DataItializer(MasterOfAnimalService masterOfAnimalService, VeterenarService veterenarService, TypeAnimalService typeAnimalService,
+                         SpecialtyService specialtyService) {
         this.masterOfAnimalService = masterOfAnimalService;
         this.veterenarService = veterenarService;
         this.typeAnimalService = typeAnimalService;

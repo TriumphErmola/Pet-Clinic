@@ -3,14 +3,14 @@ package springguru.petclinic.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import springguru.petclinic.service.MasterOfAnimalServiceImpl;
+import springguru.petclinic.service.MasterOfAnimalService;
 
 @Controller
 public class MasterOfAnimalController {
 
-    private final MasterOfAnimalServiceImpl masterOfAnimalService;
+    private final MasterOfAnimalService masterOfAnimalService;
 
-    public MasterOfAnimalController(MasterOfAnimalServiceImpl masterOfAnimalService) {
+    public MasterOfAnimalController(MasterOfAnimalService masterOfAnimalService) {
         this.masterOfAnimalService = masterOfAnimalService;
     }
 

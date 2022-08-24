@@ -3,19 +3,19 @@ package springguru.petclinic.service.map;
 import org.springframework.stereotype.Service;
 import springguru.petclinic.model.HomeAnimal;
 import springguru.petclinic.model.MasterOfAnimal;
-import springguru.petclinic.service.HomeAnimalServiceImpl;
-import springguru.petclinic.service.MasterOfAnimalServiceImpl;
+import springguru.petclinic.service.HomeAnimalService;
+import springguru.petclinic.service.MasterOfAnimalService;
 import springguru.petclinic.service.TypeAnimalService;
 
 import java.util.Set;
 
 @Service
-public class MasterOfAnimalServiceMap extends AbstractMapService<MasterOfAnimal, Long> implements MasterOfAnimalServiceImpl {
+public class MasterOfAnimalServiceMap extends AbstractMapService<MasterOfAnimal, Long> implements MasterOfAnimalService {
 
     private final TypeAnimalService typeAnimalService;
-    private final HomeAnimalServiceImpl homeAnimalService;
+    private final HomeAnimalService homeAnimalService;
 
-    public MasterOfAnimalServiceMap(TypeAnimalService typeAnimalService, HomeAnimalServiceImpl homeAnimalService) {
+    public MasterOfAnimalServiceMap(TypeAnimalService typeAnimalService, HomeAnimalService homeAnimalService) {
         this.typeAnimalService = typeAnimalService;
         this.homeAnimalService = homeAnimalService;
     }

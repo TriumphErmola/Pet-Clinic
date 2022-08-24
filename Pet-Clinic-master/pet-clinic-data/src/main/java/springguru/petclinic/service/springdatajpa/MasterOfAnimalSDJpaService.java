@@ -6,14 +6,14 @@ import springguru.petclinic.model.MasterOfAnimal;
 import springguru.petclinic.repositories.HomeAnimalRepository;
 import springguru.petclinic.repositories.MasterOfAnimalRepository;
 import springguru.petclinic.repositories.TypeAnimalRepository;
-import springguru.petclinic.service.MasterOfAnimalServiceImpl;
+import springguru.petclinic.service.MasterOfAnimalService;
 
 import java.util.HashSet;
 import java.util.Set;
 
 @Service
 @Profile("springdatajpa")
-public class MasterOfAnimalSDJpaService implements MasterOfAnimalServiceImpl {
+public class MasterOfAnimalSDJpaService implements MasterOfAnimalService {
 
     private final MasterOfAnimalRepository masterOfAnimalRepository;
     private final HomeAnimalRepository homeAnimalRepository;

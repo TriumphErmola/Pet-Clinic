@@ -4,11 +4,11 @@ import org.springframework.stereotype.Service;
 import springguru.petclinic.model.Specialty;
 import springguru.petclinic.model.Veterenar;
 import springguru.petclinic.service.SpecialtyService;
-import springguru.petclinic.service.VeterenarServiceImpl;
+import springguru.petclinic.service.VeterenarService;
 
 import java.util.Set;
 @Service
-public class VeterenarServiceMap extends AbstractMapService<Veterenar,Long> implements VeterenarServiceImpl {
+public class VeterenarServiceMap extends AbstractMapService<Veterenar,Long> implements VeterenarService {
 
     SpecialtyService specialtyService;
 

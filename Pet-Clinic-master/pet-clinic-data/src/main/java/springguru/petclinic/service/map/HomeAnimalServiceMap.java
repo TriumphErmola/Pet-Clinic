@@ -2,11 +2,11 @@ package springguru.petclinic.service.map;
 
 import org.springframework.stereotype.Service;
 import springguru.petclinic.model.HomeAnimal;
-import springguru.petclinic.service.HomeAnimalServiceImpl;
+import springguru.petclinic.service.HomeAnimalService;
 
 import java.util.Set;
 @Service
-public class HomeAnimalServiceMap extends AbstractMapService<HomeAnimal,Long>implements HomeAnimalServiceImpl {
+public class HomeAnimalServiceMap extends AbstractMapService<HomeAnimal,Long>implements HomeAnimalService {
     @Override
     public Set<HomeAnimal> findAll() {
         return super.findAll();
