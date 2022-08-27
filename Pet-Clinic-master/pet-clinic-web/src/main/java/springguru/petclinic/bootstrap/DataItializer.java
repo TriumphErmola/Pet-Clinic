@@ -3,10 +3,7 @@ package springguru.petclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import springguru.petclinic.model.*;
-import springguru.petclinic.service.MasterOfAnimalService;
-import springguru.petclinic.service.SpecialtyService;
-import springguru.petclinic.service.TypeAnimalService;
-import springguru.petclinic.service.VeterenarService;
+import springguru.petclinic.service.*;
 
 import java.time.LocalDate;
 
@@ -17,14 +14,16 @@ public class DataItializer implements CommandLineRunner {
     private final VeterenarService veterenarService;
     private final TypeAnimalService typeAnimalService;
     private final SpecialtyService specialtyService;
+    private final OsmotrService osmotrService;
 
 
     public DataItializer(MasterOfAnimalService masterOfAnimalService, VeterenarService veterenarService, TypeAnimalService typeAnimalService,
-                         SpecialtyService specialtyService) {
+                         SpecialtyService specialtyService, OsmotrService osmotrService) {
         this.masterOfAnimalService = masterOfAnimalService;
         this.veterenarService = veterenarService;
         this.typeAnimalService = typeAnimalService;
         this.specialtyService = specialtyService;
+        this.osmotrService = osmotrService;
     }
 
     @Override
@@ -32,7 +31,7 @@ public class DataItializer implements CommandLineRunner {
 
         int count = typeAnimalService.findAll().size();
 
-        if(count == 0){
+        if (count == 0) {
             loadData();
         }
     }
@@ -113,5 +112,12 @@ public class DataItializer implements CommandLineRunner {
         veterenarService.save(veterenar2);
 
         System.out.println("Loaded Veterenars");
+
+        Osmotr osmotrCat = new Osmotr();
+        osmotrCat.setHomeAnimal(kisilychik);
+        osmotrCat.setDate(LocalDate.now());
+        osmotrCat.setDescription("Sneezy kitty");
+
+        osmotrService.save(osmotrCat);
     }
 }

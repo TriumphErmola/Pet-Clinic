@@ -22,8 +22,10 @@ public class HomeAnimal extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "type_animal_id")
     private TypeAnimal typeAnimal;
+
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "home_animal")
     private Set<Osmotr> osmotrs = new HashSet<>();
+    //косяк с ссылками
 
     public String getName() {
         return name;

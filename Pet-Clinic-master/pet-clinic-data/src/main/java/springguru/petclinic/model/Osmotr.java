@@ -15,6 +15,7 @@ public class Osmotr extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "home_animal_id")
     private HomeAnimal homeAnimal;
+    //косяк с ссылками
 
     public LocalDate getDate() {
         return date;
