@@ -1,11 +1,13 @@
 package springguru.petclinic.service.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import springguru.petclinic.model.TypeAnimal;
 import springguru.petclinic.service.TypeAnimalService;
 
 import java.util.Set;
 @Service
+@Profile({"default","map"})
 public class TypeAnimalMapService extends AbstractMapService<TypeAnimal, Long> implements TypeAnimalService {
 
     @Override

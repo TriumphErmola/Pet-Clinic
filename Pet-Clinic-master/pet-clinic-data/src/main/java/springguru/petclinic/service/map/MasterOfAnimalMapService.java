@@ -1,5 +1,6 @@
 package springguru.petclinic.service.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import springguru.petclinic.model.HomeAnimal;
 import springguru.petclinic.model.MasterOfAnimal;
@@ -10,6 +11,7 @@ import springguru.petclinic.service.TypeAnimalService;
 import java.util.Set;
 
 @Service
+@Profile({"default","map"})
 public class MasterOfAnimalMapService extends AbstractMapService<MasterOfAnimal, Long> implements MasterOfAnimalService {
 
     private final TypeAnimalService typeAnimalService;

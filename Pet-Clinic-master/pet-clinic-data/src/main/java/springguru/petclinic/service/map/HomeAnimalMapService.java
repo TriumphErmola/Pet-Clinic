@@ -1,11 +1,13 @@
 package springguru.petclinic.service.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import springguru.petclinic.model.HomeAnimal;
 import springguru.petclinic.service.HomeAnimalService;
 
 import java.util.Set;
 @Service
+@Profile({"default","map"})
 public class HomeAnimalMapService extends AbstractMapService<HomeAnimal,Long>implements HomeAnimalService {
     @Override
     public Set<HomeAnimal> findAll() {
