@@ -8,11 +8,11 @@ import springguru.petclinic.service.VeterenarService;
 
 import java.util.Set;
 @Service
-public class VeterenarServiceMap extends AbstractMapService<Veterenar,Long> implements VeterenarService {
+public class VeterenarMapService extends AbstractMapService<Veterenar,Long> implements VeterenarService {
 
     SpecialtyService specialtyService;
 
-    public VeterenarServiceMap(SpecialtyService specialtyService) {
+    public VeterenarMapService(SpecialtyService specialtyService) {
         this.specialtyService = specialtyService;
     }
 

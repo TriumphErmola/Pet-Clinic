@@ -10,12 +10,12 @@ import springguru.petclinic.service.TypeAnimalService;
 import java.util.Set;
 
 @Service
-public class MasterOfAnimalServiceMap extends AbstractMapService<MasterOfAnimal, Long> implements MasterOfAnimalService {
+public class MasterOfAnimalMapService extends AbstractMapService<MasterOfAnimal, Long> implements MasterOfAnimalService {
 
     private final TypeAnimalService typeAnimalService;
     private final HomeAnimalService homeAnimalService;
 
-    public MasterOfAnimalServiceMap(TypeAnimalService typeAnimalService, HomeAnimalService homeAnimalService) {
+    public MasterOfAnimalMapService(TypeAnimalService typeAnimalService, HomeAnimalService homeAnimalService) {
         this.typeAnimalService = typeAnimalService;
         this.homeAnimalService = homeAnimalService;
     }
