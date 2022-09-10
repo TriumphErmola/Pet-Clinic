@@ -1,54 +1,37 @@
 package springguru.petclinic.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "master_of_animals")
 public class MasterOfAnimal extends Human {
 
+    public MasterOfAnimal(Long id, String firstName, String secondName, String addres, String city,
+                          String telephone, Set<HomeAnimal> homeAnimalSet) {
+        super(id, firstName, secondName);
+        this.addres = addres;
+        this.city = city;
+        this.telephone = telephone;
+        this.homeAnimalSet = homeAnimalSet;
+    }
+
     @Column(name = "addres")
     private String addres;
-
     @Column(name = "city")
     private String city;
-
     @Column(name = "telephone")
     private String telephone;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "master_of_animal")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "master_of_animal")
     private Set<HomeAnimal> homeAnimalSet = new HashSet<>();
 
-    public String getAddres() {
-        return addres;
-    }
-
-    public void setAddres(String addres) {
-        this.addres = addres;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    public Set<HomeAnimal> getHomeAnimalSet() {
-        return homeAnimalSet;
-    }
-
-    public void setHomeAnimalSet(Set<HomeAnimal> homeAnimalSet) {
-        this.homeAnimalSet = homeAnimalSet;
-    }
 }

@@ -1,8 +1,15 @@
 package springguru.petclinic.model;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "osmotrs")
 public class Osmotr extends BaseEntity {
@@ -16,28 +23,4 @@ public class Osmotr extends BaseEntity {
     @JoinColumn(name = "home_animal_id")
     private HomeAnimal homeAnimal;
     //косяк с ссылками
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public HomeAnimal getHomeAnimal() {
-        return homeAnimal;
-    }
-
-    public void setHomeAnimal(HomeAnimal homeAnimal) {
-        this.homeAnimal = homeAnimal;
-    }
 }
